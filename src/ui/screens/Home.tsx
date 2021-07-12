@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {getCurrentCost} from '../../usecases/getCurrentCost';
@@ -21,7 +14,7 @@ const Home = () => {
 
   const currentCost = getCurrentCost(new Date());
   return (
-    <SafeAreaView style={[backgroundStyle, styles.container]}>
+    <View style={[backgroundStyle, styles.container]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={[backgroundStyle, styles.principalContent]}>
         <Header title="light cost?" subtitle={currentCost} />
@@ -39,7 +32,7 @@ const Home = () => {
           will be displayed
         </Section>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
